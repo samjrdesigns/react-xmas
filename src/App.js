@@ -68,7 +68,12 @@ function App() {
     textAlign: 'center',
     fontSize: '14px',
     marginTop: '20px',
-    marginBottom: '40px'
+    marginBottom: '40px',
+    color: `${darkMode ? 'white' : 'black'}`
+  }
+
+  const anchorStyle = {
+    color: `${darkMode ? 'white' : 'black'}`
   }
 
   const shareUrlStyle = {
@@ -206,13 +211,13 @@ function App() {
 
       <div style={shareUrlStyle}>
         <span>Share: </span>
-        <a href={shareUrl}>{shareUrl}</a>
+        <a href={shareUrl} style={anchorStyle}>{shareUrl}</a>
       </div>
 
       <MerryChristmas width={width} tiers={tiers} trunkRows={trunkRows} trunkCols={trunkCols} name={name} darkMode={darkMode} tileSize={tileSize} />
 
       <div style={copyStyle}>
-        &copy; 2024 by <a href='https://github.com/samjrdesigns/react-xmas' target='_blank' rel='noopener noreferrer'>samjrdesigns</a>
+        &copy; 2024 by <a href='https://github.com/samjrdesigns/react-xmas' style={anchorStyle} target='_blank' rel='noopener noreferrer'>samjrdesigns</a>
       </div>
     </div>
   );

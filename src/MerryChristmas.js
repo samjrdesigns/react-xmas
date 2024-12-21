@@ -68,9 +68,6 @@ const MerryChristmas = (props) => {
         <Trunk width={width} rows={trunkRows} cols={trunkCols} bgColor1={bgColorA} bgColor2={bgColorB} tileSize={tileSize} />
         <Margin width={width} rows={numMarginLines} bgColor1="LawnGreen" bgColor2="LawnGreen" tileSize={tileSize} />
       </div>
-      <br/>
-      <br/>
-
     </>
   )
 }

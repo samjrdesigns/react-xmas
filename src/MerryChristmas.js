@@ -42,12 +42,12 @@ const MerryChristmas = (props) => {
   useEffect(() => {
     // Set an interval to update the seed value
     const interval = setInterval(() => {
-      setSeed((prevSeed) => (prevSeed + 1) % ornamentColors.length); // Increment the seed
+      setSeed((prevSeed) => (prevSeed + 1) % 4); // Increment the seed
     }, 200); // Change every 1000ms (1 second)
 
     // Cleanup the interval when the component unmounts
     return () => clearInterval(interval);
-  }, []); // Empty dependency array to run the effect only once
+  }, []);
 
   let treeTiers = [];
 

@@ -13,9 +13,9 @@ function App() {
     return {
       name: params.get('greeting') || 'Champ',
       tileSize: params.get('tile') || '20',
+      tiers: params.get('foliage') || '7',
       trunkRows: params.get('trunkh') || '4',
       trunkCols: params.get('trunkw') || '5',
-      tiers: params.get('tiers') || '7',
       dark: params.get('dark') === 'true' ? true : false
     };
   };
@@ -32,6 +32,7 @@ function App() {
 
   const bgColor = darkMode ? 'black' : 'white';
   const width = 2 * tiers + 9;
+  const shareUrl = `https://reactxmas.online/?greeting=${name}&tile=${tileSize}&foliage=${tiers}&trunkh=${trunkRows}&trunkw=${trunkCols}&dark=${darkMode}`;
 
   const style = {
     backgroundColor: `${bgColor}`,
@@ -44,11 +45,11 @@ function App() {
     display: 'grid',
     gridTemplateColumns: 'auto auto auto auto auto auto',
     gridTemplateRows: 'auto',
-    gridAutoFlow: 'column',
+    gridAutoFlow: 'row',
     gap: '10px 10px',
     margin: 'auto',
     padding: '10px',
-    width: '680px',
+    width: '710px',
     fontSize: '14px'
   }
 
@@ -61,6 +62,19 @@ function App() {
 
   const inputStyle = {
     width: '100px'
+  }
+
+  const copyStyle = {
+    textAlign: 'center',
+    fontSize: '14px',
+    marginTop: '20px',
+    marginBottom: '40px'
+  }
+
+  const shareUrlStyle = {
+    textAlign: 'center',
+    fontSize: '14px',
+    color: `${darkMode ? 'white' : 'black'}`
   }
 
   const changeName = (e) => {
@@ -157,6 +171,14 @@ function App() {
         </div>
 
         <div style={settingStyle}>
+          <div>Foliage Size: </div>
+          <div>
+            <button onClick={(e) => changeTiers(e, -1)}>Shrink</button>
+            <button onClick={(e) => changeTiers(e, +1)}>Grow</button>
+          </div>
+        </div>
+
+        <div style={settingStyle}>
           <div>Trunk Height: </div>
           <div>
             <button onClick={(e) => changeTrunkRows(e, +1)}>Tall</button>
@@ -173,14 +195,6 @@ function App() {
         </div>
 
         <div style={settingStyle}>
-          <div>Foliage Size: </div>
-          <div>
-            <button onClick={(e) => changeTiers(e, -1)}>Shrink</button>
-            <button onClick={(e) => changeTiers(e, +1)}>Grow</button>
-          </div>
-        </div>
-
-        <div style={settingStyle}>
           <div>Dark Mode: </div>
           <div>
             <button onClick={(e) => changeDarkMode(e, true)}>Enable</button>
@@ -190,10 +204,16 @@ function App() {
 
       </div>
 
+      <div style={shareUrlStyle}>
+        <span>Share: </span>
+        <a href={shareUrl}>{shareUrl}</a>
+      </div>
+
       <MerryChristmas width={width} tiers={tiers} trunkRows={trunkRows} trunkCols={trunkCols} name={name} darkMode={darkMode} tileSize={tileSize} />
 
-      <br />
-      <br />
+      <div style={copyStyle}>
+        &copy; 2024 by <a href='https://github.com/samjrdesigns/react-xmas' target='_blank'>samjrdesigns</a>
+      </div>
     </div>
   );
 }

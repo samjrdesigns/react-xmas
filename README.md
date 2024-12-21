@@ -3,18 +3,12 @@ Created an abstract Christmas tree using React.
 
 ## URL Params
 
-- **greeting:** the name to use to personalize the well-wishes
-  - **example:** greeting=Rudolph
-- **tile:** the dimensions, in pixels, of the individual tiles
-  - **example:** tile=20
-- **trunkh:** the height, in tiles, of the trunk
-  - **example:** trunkh=4
-- **trunkw:** the width, in tiles, of the trunk
-  - **example:** trunkw=5
-- **tiers:** the count of the two-tile-tall sections of tree foliage
-  - **example:** tiers=7
-- **dark:** true if dark mode is desired
-  - **example:** dark=true
+- **greeting:** the name to use to personalize the well-wishes (greeting=Rudolph)
+- **tile:** the dimensions, in pixels, of the individual tiles (tile=20)
+- **trunkh:** the height, in tiles, of the trunk (trunkh=4)
+- **trunkw:** the width, in tiles, of the trunk (trunkw=5)
+- **tiers:** the count of the two-tile-tall sections of tree foliage (tiers=7)
+- **dark:** true if dark mode is desired (dark=true)
 
 ### Full URL Example
 

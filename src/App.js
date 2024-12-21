@@ -212,7 +212,7 @@ function App() {
       <MerryChristmas width={width} tiers={tiers} trunkRows={trunkRows} trunkCols={trunkCols} name={name} darkMode={darkMode} tileSize={tileSize} />
 
       <div style={copyStyle}>
-        &copy; 2024 by <a href='https://github.com/samjrdesigns/react-xmas' target='_blank'>samjrdesigns</a>
+        &copy; 2024 by <a href='https://github.com/samjrdesigns/react-xmas' target='_blank' rel='noopener noreferrer'>samjrdesigns</a>
       </div>
     </div>
   );

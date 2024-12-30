@@ -50,7 +50,7 @@ const Settings = () => {
     // Now that all the search params have been processed, show the mosaic
     setVisible(true);
 
-  }, []);
+  }, [setGreeting, setTileSize, setFoliage, setTrunkHeight, setTrunkWidth, setDarkMode, setVisible]);
 
   const shareUrl = baseUrl +
     `?greeting=${greeting}` +
@@ -72,12 +72,6 @@ const Settings = () => {
     fontSize: '14px',
     color: `${darkMode ? 'white' : 'black'}`,
     fontWeight: 'bold'
-  }
-
-  const settingStyle = {
-    /*width: 'auto',
-    padding: '0px',
-    margin: '0px'*/
   }
 
   const inputStyle = {

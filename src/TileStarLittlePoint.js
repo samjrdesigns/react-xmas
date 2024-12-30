@@ -1,5 +1,10 @@
-const StarLittlePoint = (props) => {
-  const tileSize = Number(props.tileSize);
+import { useContext } from 'react';
+import AppContext from './AppContext';
+
+const TileStarLittlePoint = (props) => {
+
+  const { tileSize, starColor } = useContext(AppContext);
+
   const halfTile = tileSize / 2;
   const rotation = () => {
     if (props.direction === 'NE') {
@@ -30,7 +35,7 @@ const StarLittlePoint = (props) => {
   const squareStyle = {
     width: `${halfTile}px`,
     height: `${halfTile}px`,
-    backgroundColor: 'orange'
+    backgroundColor: `${starColor}`
   }
 
   return (
@@ -45,4 +50,4 @@ const StarLittlePoint = (props) => {
   )
 }
 
-export default StarLittlePoint;
+export default TileStarLittlePoint;

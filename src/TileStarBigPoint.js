@@ -1,5 +1,10 @@
-const StarBigPoint = (props) => {
-  const tileSize = Number(props.tileSize);
+import { useContext } from 'react';
+import AppContext from './AppContext';
+
+const TileStarBigPoint = (props) => {
+
+  const { tileSize, starColor } = useContext(AppContext);
+  
   const halfTile = tileSize / 2;
   const rotation = () => {
     if (props.direction === 'N') {
@@ -34,7 +39,7 @@ const StarBigPoint = (props) => {
     height: '0',
     borderLeft: `${halfTile}px solid transparent`,
     borderRight: '0px solid transparent',
-    borderBottom: `${halfTile}px solid orange`
+    borderBottom: `${halfTile}px solid ${starColor}`
   }
 
   const rightTriangleStyle = {
@@ -42,13 +47,13 @@ const StarBigPoint = (props) => {
     height: '0',
     borderLeft: '0px solid transparent',
     borderRight: `${halfTile}px solid transparent`,
-    borderBottom: `${halfTile}px solid orange`,
+    borderBottom: `${halfTile}px solid ${starColor}`,
   }
 
   const squareStyle = {
     width: `${halfTile}px`,
     height: `${halfTile}px`,
-    backgroundColor: 'orange'
+    backgroundColor: `${starColor}`
   }
 
   return (
@@ -63,4 +68,4 @@ const StarBigPoint = (props) => {
   )
 }
 
-export default StarBigPoint;
+export default TileStarBigPoint;

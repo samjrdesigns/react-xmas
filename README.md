@@ -1,5 +1,5 @@
 # react-xmas
-An abstract, customizable Christmas tree using React. Customize the tree and share the link with your friends.
+An abstract, customizable Christmas tree mosaic using React. Customize the tree and share the link with your friends.
 
 ## URL Params
 
